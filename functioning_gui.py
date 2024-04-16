@@ -32,6 +32,11 @@ def update_plot(ax, x_data, y_data, title, mode):
     ax.plot(x_data, y_data, color="yellow")
     if mode == 1:
         ax.set_ylim(-300, 0)
+        ax.set_xlabel("Frequency[Hz]", color="white")
+        ax.set_ylabel("dBm", color="white")
+    else:
+        ax.set_xlabel("Time [mSec]", color="white")
+        ax.set_ylabel("Voltage", color="white")
     ax.set_title(title, color="white")
 
 def update_plots(fm_sample, time_axis_ms, filtered_real, filtered_imag, modulating_signal, power_dBm_demod, freq_axis_demod):
@@ -138,18 +143,18 @@ fig.subplots_adjust(hspace=0.5)
 # Set text color to white
 # Set tick label color to white
 ax1.tick_params(axis="both", colors="white")
-ax1.set_xlabel("X Axis Label", color="white")
-ax1.set_ylabel("Y Axis Label", color="white")
+ax1.set_xlabel("Time (mSec)", color="white")
+ax1.set_ylabel("Voltage", color="white")
 ax1.set_title("FM Signal in Time Domain", color="white")
 
 ax2.tick_params(axis="both", colors="white")
-ax2.set_xlabel("X Axis Label", color="white")
-ax2.set_ylabel("Y Axis Label", color="white")
+ax2.set_xlabel("Time (mSec)", color="white")
+ax2.set_ylabel("Voltage", color="white")
 ax2.set_title("Demodulated Signal in Time Domain", color="white")
 
 ax3.tick_params(axis="both", colors="white")
-ax3.set_xlabel("X Axis Label", color="white")
-ax3.set_ylabel("Y Axis Label", color="white", )
+ax3.set_xlabel("Frequency[Hz]", color="white")
+ax3.set_ylabel("dBm", color="white", )
 ax3.set_ylim(-300, 0)
 ax3.set_title("Demodulated Signal in Frequency Domain", color="white")
 
