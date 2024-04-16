@@ -1,0 +1,16 @@
+Library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity phase_increment_PLL_Test is
+generic(NumOfBits : integer := 20);
+port(
+		increment :out std_logic_vector(numOfBits-1 downto 0));
+end entity;
+
+architecture arch_phase_increment_PLL_Test of phase_increment_PLL_Test is
+begin
+	increment <= conv_std_logic_vector(26214,numOfBits); -- 1.25M
+	
+end architecture;

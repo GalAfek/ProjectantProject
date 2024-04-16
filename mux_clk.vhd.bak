@@ -1,0 +1,20 @@
+Library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity mux_clk is
+
+port(
+		clks	: in std_logic(2 downto 0);
+		check : in std_logic_logic(1 downto 0);
+		o_clk:out std_logic;
+end entity;
+
+architecture arch_mux_clk of mux_clk is
+begin
+		o_clk <= clk[0] when check = "00" else
+					clk[1] when check = "00" else
+					clk[2] when check = "00" else
+					clk[0];
+end architecture;
